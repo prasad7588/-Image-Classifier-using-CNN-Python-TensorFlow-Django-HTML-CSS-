@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Add Bootstrap for responsive design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header mt-5">
+            <h1 class="display-4">Image Classifier</h1>
+            <p class="lead">Upload an image and get the prediction from our model!</p>
+        </div>
+
+        <!-- Sample Images from Custom Folder -->
+        <div class="row mt-5">
+            {% for item in sample_images_info %}
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="data:image/png;base64,{{ item.image }}" class="card-img-top" alt="{{ item.label }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ item.label }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Image Upload Form -->
+        <div class="upload-card p-4 mt-4">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="file" name="image" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Upload and Classify</button>
+            </form>
+        </div>
+
+        <!-- Display Results -->
+        {% if uploaded_image_url %}
+            <div class="result-card p-4 mt-4">
+                <h2>Uploaded Image:</h2>
+                <img src="{{ uploaded_image_url }}" alt="Uploaded Image" class="img-fluid rounded shadow">
+                <h2 class="mt-4">Prediction: <span class="text-success">{{ result }}</span></h2>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

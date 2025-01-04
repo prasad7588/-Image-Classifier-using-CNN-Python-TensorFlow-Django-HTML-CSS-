@@ -1,0 +1,76 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Card Style for Upload Form */
+.upload-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.upload-card .btn {
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.upload-card .form-control {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Result Card */
+.result-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.result-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Interactive Button Hover Effect */
+.upload-card .btn:hover {
+    background-color: #45a049;
+    transition: 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
