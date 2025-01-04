@@ -1,38 +1,37 @@
-# Image Classifier Using Convolutional Neural Network (CNN)
+# CIFAR-10 Image Classifier Using CNN
 
-This project is an **Image Classifier** built using **TensorFlow** and a **Convolutional Neural Network (CNN)** to categorize images into predefined classes, such as animals and cars, using a public dataset. The classifier is integrated with an interactive web interface, allowing users to upload images and receive real-time predictions. This project demonstrates the practical application of deep learning in image recognition and offers an accessible platform for real-time image classification.
+This project implements an image classifier using a **Convolutional Neural Network (CNN)** to classify images from the **CIFAR-10** dataset into 10 categories (e.g., airplanes, cars, cats, dogs). The model is trained using TensorFlow and Keras and includes techniques like data augmentation, batch normalization, and learning rate scheduling for improved performance.  
 
 ---
 
 ## Features
 
-- **Deep Learning Model**:  
-  Utilizes a TensorFlow-based CNN to train on a public dataset, ensuring accurate image classification.  
-
-- **Interactive Web Interface**:  
-  Developed with Django, HTML, and CSS, the web app allows users to upload images and view predictions with confidence scores.  
-
-- **Real-Time Predictions**:  
-  Provides instant feedback for uploaded images, demonstrating the power of machine learning in real-world applications.  
-
-- **User-Friendly Design**:  
-  The interface is intuitive and designed for ease of use, catering to both technical and non-technical users.  
+- **Dataset**: CIFAR-10, a popular dataset consisting of 60,000 32x32 color images in 10 classes, with 6,000 images per class.  
+- **Deep Learning Techniques**:  
+  - Convolutional Neural Network (CNN) for feature extraction.  
+  - Batch Normalization and Dropout for improved generalization.  
+  - Data Augmentation to expand the dataset diversity.  
+- **Optimization**:  
+  - Learning rate scheduling with `ReduceLROnPlateau`.  
+  - Early stopping to prevent overfitting and improve training efficiency.  
+- **Interactive Web Integration**: Model saved as `model.h5` for easy integration with a Django-based web interface.
 
 ---
 
 ## Tech Stack
 
-- **Programming Languages**: Python, HTML, CSS  
-- **Frameworks**: TensorFlow, Django  
-- **Libraries**: NumPy, Pandas, Matplotlib  
-- **Tools**: TensorFlow (for CNN), Django (for web development)  
+- **Programming Language**: Python  
+- **Libraries**:  
+  - TensorFlow and Keras for building and training the CNN.  
+  - NumPy for numerical operations.  
+  - ImageDataGenerator for data augmentation.  
+  - SGD optimizer with momentum for efficient training.  
 
 ---
 
-## Installation and Setup
+## Installation
 
-Follow these steps to set up and run the project locally:
-
-1. Clone this repository:  
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/image-classifier-cnn.git
+   git clone https://github.com/your-username/cifar10-image-classifier.git
+   cd cifar10-image-classifier
